@@ -45,7 +45,9 @@ int main(int argc, char **argv)
 
     // All node must call this function to communicate with the roscore.
     int myArgc = argc - XYZ_COUNT;
+    char** myArgv;
     int i = 0;
+
     while (i < myArgc)
     {
         *(myArgv + i) = argv[i];
@@ -53,7 +55,7 @@ int main(int argc, char **argv)
     }
 
     int xPo = std::stoi(argv[myArgc]);
-    int yPo = std:stoi(argv[myArgc + 1]);
+    int yPo = std::stoi(argv[myArgc + 1]);
     int zPo = std::stoi(argv[myArgc + 2]);
 
     ros::init(argc, argv, my_name);
